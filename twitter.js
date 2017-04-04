@@ -29,3 +29,21 @@ function numeroLetras(){
     cantLetras.innerText = contCaracteres;
 } //falta limitar numero de caracteres ingresados.
 
+//para publicar un tweet
+enviar.addEventListener("click", tweet);
+function tweet(){
+    var tweets = document.getElementById("tweets");
+    
+    var nuevoTweet = document.createElement("div");
+    var contenido = document.createElement("p");
+    var autor = document.createElement("h4");
+    
+    contenido.innerHTML= textoEntrada.value;
+    autor.innerHTML= usuario.value;
+    
+    nuevoTweet.appendChild(contenido);
+    nuevoTweet.appendChild(autor);
+    
+    tweets.insertBefore(nuevoTweet, tweets.firstChild); //para que queden al principio.
+}
+
